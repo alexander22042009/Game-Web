@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Labyrinth: Echo Hunter</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas" aria-label="Neon Labyrinth game canvas"></canvas>
+
+      <div id="hud" class="panel hidden">
+        <div class="hud-left">
+          <span id="hud-health">HP: 100</span>
+          <span id="hud-score">Score: 0</span>
+          <span id="hud-level">Level: 1</span>
+          <span id="hud-shards">Shards: 0/0</span>
+        </div>
+        <div class="hud-right">
+          <button id="hud-mute-btn" class="ui-btn small" type="button">Mute: Off</button>
+          <span id="hud-weapon">Mode: SINGLE</span>
+        </div>
+      </div>
+
+      <section id="menu-screen" class="overlay visible">
+        <div class="card">
+          <h1>Neon Labyrinth: Echo Hunter</h1>
+          <p class="subtitle">Survive the corrupted simulation. Collect shards. Escape the maze.</p>
+          <button id="play-btn" class="ui-btn primary" type="button">Play</button>
+          <p class="instructions">
+            Move: WASD / Arrows | Dash: Shift | Shoot: Left Mouse | Decoy: Right Mouse
+            | Pause: ESC | Weapon Mode: Mouse Wheel | Mute: M
+          </p>
+        </div>
+      </section>
+
+      <section id="pause-screen" class="overlay hidden">
+        <div class="card">
+          <h2>Paused</h2>
+          <button id="resume-btn" class="ui-btn primary" type="button">Resume</button>
+          <button id="pause-restart-btn" class="ui-btn" type="button">Restart</button>
+          <button id="pause-mute-btn" class="ui-btn" type="button">Mute: Off</button>
+        </div>
+      </section>
+
+      <section id="game-over-screen" class="overlay hidden">
+        <div class="card">
+          <h2 id="final-title">Simulation Failed</h2>
+          <p id="final-score">Score: 0</p>
+          <p id="final-level">Highest Level: 1</p>
+          <button id="restart-btn" class="ui-btn primary" type="button">Restart</button>
+        </div>
+      </section>
+
+      <section id="help-tip" class="tip hidden">
+        <p>
+          Goal: Collect all shards to unlock the portal, then reach it.
+          Drones use FSM states: IDLE, PATROL, CHASE, ATTACK, RETREAT, DEAD, RESPAWN.
+        </p>
+      </section>
+    </div>
+
+    <script type="module" src="./js/main.js?v=5"></script>
+  </body>
+</html>
